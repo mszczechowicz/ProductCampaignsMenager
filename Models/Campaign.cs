@@ -1,4 +1,5 @@
 ﻿using ProductCampaignsMenager.Data;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Tracing;
 
 namespace ProductCampaignsMenager.Models
@@ -19,5 +20,7 @@ namespace ProductCampaignsMenager.Models
         public bool Status { get; set; }
 
         public List<Town> Town { get; set; }
+
+        public int Radius { get; set; }
     }
 }
