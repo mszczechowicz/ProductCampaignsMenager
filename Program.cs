@@ -1,7 +1,14 @@
+using ProductCampaignsMenager.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//DbContext configuration
+//var connectionString = builder.Configuration.GetConnectionString("AppDb");
+builder.Services.AddDbContext<AppDbContext>();
+
 
 var app = builder.Build();
 

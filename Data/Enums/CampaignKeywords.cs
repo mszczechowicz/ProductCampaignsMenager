@@ -1,4 +1,4 @@
-﻿namespace ProductCampaignsMenager.Data
+﻿namespace ProductCampaignsMenager.Data.Enums
 {
     public enum CampaignKeywords
     {

@@ -1,4 +1,4 @@
-﻿using ProductCampaignsMenager.Data;
+﻿using ProductCampaignsMenager.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Tracing;
 
