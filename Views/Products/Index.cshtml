@@ -6,10 +6,10 @@
 }
 
 <div class="row">
-	<div class="col-md-col-8 offset-md-2">
+	<div class="col-sm-8 offset-sm-2">
 		<table class="table" >
-			<thead class="align-middle">
-				<tr>
+			<thead>
+				<tr class="text-center">
 					<th>@Html.DisplayNameFor(model=>model.ProductName)</th>
 					<th>@Html.DisplayNameFor(model=>model.CampaignCount)</th>
 					<th>Actions</th>
@@ -19,7 +19,7 @@
 			<tbody>
 				@foreach (var item in Model)
 				{
-					<tr>
+					<tr class="text-center">
 						<td class="align-middle">
 							@Html.DisplayFor(modelItem =>item.ProductName)
 						</td>
@@ -29,7 +29,7 @@
 						<td class="align-middle">
 							<a class="btn btn-outline-primary" ><i class="bi bi-pencil-square"></i>Edit product name</a>
 							<a class="btn btn-outline-info"><i class="bi bi-pencil-eye"></i>Details</a>
-							<a class="btn btn-outline-primary"><i class="bi bi-pencil-trash"></i>Delete</a>
+							<a class="btn btn-outline-primary"><i class="bi bi-pencil-warning"></i>Delete</a>
 
 						</td>
 

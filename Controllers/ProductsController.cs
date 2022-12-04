@@ -1,22 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductCampaignsMenager.Data;
+using ProductCampaignsMenager.Data.Services;
 
 namespace ProductCampaignsMenager.Controllers
 {
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IProductsService _service;
 
-        public ProductController(AppDbContext context)
+        public ProductsController(IProductsService service)
         {
-            _context= context;
+            _service= service;
         }
 
 
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Products.ToListAsync(); 
+            var data = await _service.GetAll();
 
             return View(data);
         }

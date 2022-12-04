@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using ProductCampaignsMenager.Data;
-
+using ProductCampaignsMenager.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<IProductsService, ProductsService>();
+
 builder.Services.AddControllersWithViews();
 
 //DbContext configuration
@@ -31,7 +34,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Product}/{action=Index}/{id?}");
+    pattern: "{controller=Products}/{action=Index}/{id?}");
 AppDbInitializer.Seed(app);
 app.Run();
 

@@ -1,0 +1,43 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ProductCampaignsMenager.Models;
+
+namespace ProductCampaignsMenager.Data.Services
+{
+	public class ProductsService : IProductsService
+	{
+		private readonly AppDbContext _context;
+
+		public ProductsService(AppDbContext context)
+		{
+			_context= context;
+		}
+
+		public void Add(Product product)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Delete(int id)
+		{
+			throw new NotImplementedException();
+		}
+
+		public async Task<IEnumerable<Product>> GetAll()
+		{
+			var result = await _context.Products.ToListAsync();
+			return result;
+		}
+
+		public Product GetById(int id)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Product Update(int id, Product newProduct)
+		{
+			throw new NotImplementedException();
+		}
+
+		
+	}
+}
