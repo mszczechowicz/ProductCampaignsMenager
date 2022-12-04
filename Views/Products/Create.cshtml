@@ -1,0 +1,35 @@
+﻿@model Product
+
+@{
+	ViewData["Title"] = "Add new Product";
+}
+
+<div class="row text">
+	<div class="col-sm-8 offset-sm-2">
+		<p>
+			<h1 class="text-center">
+				Add a New Product
+			</h1>
+		</p>
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<form asp-action="Create">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+				</form>
+
+				<div class="form-group">
+					<label asp-for="ProductName" class="control-label"></label>
+					<input asp-for="ProductName" class="form-control"></>
+					<span asp-validation-for="ProductName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<input type="submit"  value="Create" class="btn btn-outline-success float-right"/>
+					<a class="btn btn-outline-secondary " asp-action="Index">ShowAll</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
