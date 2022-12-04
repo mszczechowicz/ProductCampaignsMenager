@@ -11,6 +11,9 @@ namespace ProductCampaignsMenager.Models
 
         public int CampaignCount { get; set; }
 
+        //Relationships
+
+        public List<Campaign> Campaign { get; set;}
 
     }
 }

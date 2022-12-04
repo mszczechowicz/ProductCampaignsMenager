@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using ProductCampaignsMenager.Models;
 
 namespace ProductCampaignsMenager.Data
 {
@@ -15,10 +15,18 @@ namespace ProductCampaignsMenager.Data
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json")
                     .Build();
-
-         
-
         }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Town> Towns { get; set; }
+
+        public DbSet<Campaign> Campaigns { get; set; }
+
+     
+
+
+
 
 
     }

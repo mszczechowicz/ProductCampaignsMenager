@@ -9,5 +9,9 @@ namespace ProductCampaignsMenager.Models
 
         public string TownName { get; set;}
 
+        //Relationships
+
+        public List<Campaign> Campaign { get; set; }
+
     }
 }

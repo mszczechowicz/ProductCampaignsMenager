@@ -1,5 +1,6 @@
 ﻿using ProductCampaignsMenager.Data.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Tracing;
 
 namespace ProductCampaignsMenager.Models
@@ -19,8 +20,18 @@ namespace ProductCampaignsMenager.Models
 
         public bool Status { get; set; }
 
-        public List<Town> Town { get; set; }
+       
 
         public int Radius { get; set; }
+
+        //Relationships
+
+        public int ProductId { get; set; }
+        [ForeignKey("ProductId")]
+        public Product Product { get; set; }
+
+        public int TownId { get; set; }
+        [ForeignKey(" TownId")]
+        public Town Town { get; set; }
     }
 }
