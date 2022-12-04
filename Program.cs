@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using ProductCampaignsMenager.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //DbContext configuration
-//var connectionString = builder.Configuration.GetConnectionString("AppDb");
-builder.Services.AddDbContext<AppDbContext>();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
 
 var app = builder.Build();
