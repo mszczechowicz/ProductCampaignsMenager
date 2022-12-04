@@ -6,10 +6,10 @@ namespace ProductCampaignsMenager.Models
     {
         [Key]
         public int ProductId { get; set; }
-
+        [Display(Name ="Product name")]
         public string ProductName { get; set; }
-
-        public int CampaignCount { get; set; }
+		[Display(Name = "Number of Campaigns")]
+		public int CampaignCount { get; set; }
 
         //Relationships
 
