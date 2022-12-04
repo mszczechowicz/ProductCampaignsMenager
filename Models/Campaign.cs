@@ -9,7 +9,7 @@ namespace ProductCampaignsMenager.Models
     {
         [Key]
         public int CampaignId { get; set; }
-
+        
         public string CampaignName { get; set; }
 
         public CampaignKeywords CampaignKeywords{ get; set; }
