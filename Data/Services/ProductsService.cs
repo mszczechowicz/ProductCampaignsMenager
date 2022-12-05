@@ -14,7 +14,9 @@ namespace ProductCampaignsMenager.Data.Services
 
 		public void Add(Product product)
 		{
-			throw new NotImplementedException();
+			_context.Products.Add(product);
+			
+			_context.SaveChanges();	
 		}
 
 		public void Delete(int id)

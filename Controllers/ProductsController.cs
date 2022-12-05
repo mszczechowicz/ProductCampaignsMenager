@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProductCampaignsMenager.Data;
 using ProductCampaignsMenager.Data.Services;
+using ProductCampaignsMenager.Models;
 
 namespace ProductCampaignsMenager.Controllers
 {
@@ -22,9 +23,25 @@ namespace ProductCampaignsMenager.Controllers
             return View(data);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         { 
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("ProductName","CampaignCount")]Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(product);
+            }
+
+            _service.Add(product);
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        
+
     }
 }
